@@ -1,0 +1,20 @@
+# Your real settings (report key, passwords) — never commit these
+feedback/config.php
+
+# Comments, replies and screenshots collected on a server
+feedback/data/*
+!feedback/data/.htaccess
+!feedback/data/index.html
+!feedback/data/shots/
+feedback/data/shots/*
+!feedback/data/shots/index.html
+
+# Exports downloaded from the report
+review-comments-*.zip
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

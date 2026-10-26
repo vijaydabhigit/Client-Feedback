@@ -1,0 +1,18 @@
+# Client Feedback: block direct access to settings and helper files
+<FilesMatch "^(config|config\.example|lib)\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+Options -Indexes
+
+# Ask browsers and caches to re-check the widget files on every load
+<IfModule mod_headers.c>
+  <FilesMatch "^(feedback|widget)\.js$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
